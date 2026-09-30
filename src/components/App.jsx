@@ -5,21 +5,20 @@ import EducationDone from "./EducationDone";
 import EducationEdit from "./EducationEdit";
 
 function App() {
-  const [info, setInfo] = useState({});
+  const [infoData, setInfoData] = useState({});
   const [isInfoDone, setIsInfoDone] = useState(false);
   const [educationData, setEducationData] = useState([]);
 
   function updateName(e) {
-    setInfo({ ...info, fullName: e.target.value });
+    setInfoData({ ...infoData, fullName: e.target.value });
   }
   function updateEmail(e) {
-    setInfo({ ...info, email: e.target.value });
+    setInfoData({ ...infoData, email: e.target.value });
   }
   function updateTelephone(e) {
-    setInfo({ ...info, tel: e.target.value });
+    setInfoData({ ...infoData, tel: e.target.value });
   }
-  function updateInfoSection(e) {
-    e.preventDefault();
+  function updateInfoSection() {
     setIsInfoDone(!isInfoDone);
   }
 
@@ -57,10 +56,10 @@ function App() {
       <h1>CV Maker</h1>
       <h2>General Information</h2>
       {isInfoDone ? (
-        <InfoDone data={info} changeToEdit={updateInfoSection}></InfoDone>
+        <InfoDone data={infoData} changeToEdit={updateInfoSection}></InfoDone>
       ) : (
         <InfoEdit
-          data={info}
+          data={infoData}
           handleNameChange={updateName}
           handleEmailChange={updateEmail}
           handleTelephoneChange={updateTelephone}

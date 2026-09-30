@@ -7,7 +7,6 @@ function InfoEdit({
 }) {
   return (
     <form>
-      <h2>General Information</h2>
       <div className="field">
         <label>
           Name
@@ -38,7 +37,7 @@ function InfoEdit({
           ></input>
         </label>
       </div>
-      <button onClick={changeToDone}>Submit</button>
+      <button onClick={changeToDone} type="button">Submit</button>
     </form>
   );
 }
