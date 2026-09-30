@@ -3,11 +3,14 @@ import InfoEdit from "./InfoEdit";
 import InfoDone from "./InfoDone";
 import EducationDone from "./EducationDone";
 import EducationEdit from "./EducationEdit";
+import WorkDone from "./WorkDone";
+import WorkEdit from "./WorkEdit";
 
 function App() {
   const [infoData, setInfoData] = useState({});
   const [isInfoDone, setIsInfoDone] = useState(false);
   const [educationData, setEducationData] = useState([]);
+  const [workData, setWorkData] = useState([]);
 
   function updateName(e) {
     setInfoData({ ...infoData, fullName: e.target.value });
@@ -23,7 +26,7 @@ function App() {
   }
 
   function addEducationEntry() {
-    const newId = educationData.length;
+    const newId = crypto.randomUUID();
     setEducationData((educationData) => [
       ...educationData,
       { id: newId, edit: true },
@@ -51,6 +54,31 @@ function App() {
     );
   }
 
+  function addWorkEntry() {
+    const newId = crypto.randomUUID();
+    setWorkData((workData) => [...workData, { id: newId, edit: true }]);
+  }
+
+  function updateWorkEntry(e, id, field) {
+    setWorkData((workData) =>
+      workData.map((entry) =>
+        entry.id === id ? { ...entry, [field]: e.target.value } : entry
+      )
+    );
+  }
+
+  function deleteWorkEntry(id) {
+    setWorkData((workData) => workData.filter((entry) => entry.id !== id));
+  }
+
+  function toggleWorkEntryEdit(id) {
+    setWorkData((workData) =>
+      workData.map((entry) =>
+        entry.id === id ? { ...entry, edit: !entry.edit } : entry
+      )
+    );
+  }
+
   return (
     <>
       <h1>CV Maker</h1>
@@ -66,6 +94,7 @@ function App() {
           changeToDone={updateInfoSection}
         ></InfoEdit>
       )}
+      <hr></hr>
       <h2>Education</h2>
       {educationData.map((entry) =>
         entry.edit ? (
@@ -86,6 +115,28 @@ function App() {
       )}
       <button onClick={addEducationEntry} style={{ display: "block" }}>
         Add Education
+      </button>
+      <hr></hr>
+      <h2>Work Experience</h2>
+      {workData.map((entry) =>
+        entry.edit ? (
+          <WorkEdit
+            data={entry}
+            key={entry.id}
+            handleUpdate={updateWorkEntry}
+            changeToDone={toggleWorkEntryEdit}
+          ></WorkEdit>
+        ) : (
+          <WorkDone
+            data={entry}
+            key={entry.id}
+            changeToEdit={toggleWorkEntryEdit}
+            deleteEntry={deleteWorkEntry}
+          ></WorkDone>
+        )
+      )}
+      <button onClick={addWorkEntry} style={{ display: "block" }}>
+        Add Work Experience
       </button>
     </>
   );
