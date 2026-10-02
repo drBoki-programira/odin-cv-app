@@ -7,37 +7,40 @@ function InfoEdit({
 }) {
   return (
     <form>
+      <h2>General Information</h2>
       <div className="field">
-        <label>
-          Name
-          <input
-            type="text"
-            value={data.fullName}
-            onChange={handleNameChange}
-          ></input>
-        </label>
+        <label htmlFor="fullName">Full Name</label>
+        <input
+          id="fullName"
+          name="fullName"
+          type="text"
+          value={data.fullName}
+          onChange={handleNameChange}
+        ></input>
       </div>
       <div className="field">
-        <label>
-          Email address
-          <input
-            type="email"
-            value={data.email}
-            onChange={handleEmailChange}
-          ></input>
-        </label>
+        <label htmlFor="email">Email address</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          value={data.email}
+          onChange={handleEmailChange}
+        ></input>
       </div>
       <div className="field">
-        <label>
-          Telephone number
-          <input
-            type="tel"
-            value={data.tel}
-            onChange={handleTelephoneChange}
-          ></input>
-        </label>
+        <label htmlFor="phone">Telephone number</label>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          value={data.tel}
+          onChange={handleTelephoneChange}
+        ></input>
       </div>
-      <button onClick={changeToDone} type="button">Submit</button>
+      <button onClick={changeToDone} type="button">
+        Done
+      </button>
     </form>
   );
 }

@@ -1,11 +1,12 @@
 function EducationDone({ data, changeToEdit, deleteEntry }) {
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
   return (
     <>
       <p>
-        {data.from} - {data.to}
+      {months[data.startMonth]}{data.startYear} - {months[data.endMonth]}{data.endYear}
       </p>
       <div>
-        {data.schoolName}, {data.titleOfStudy}
+        {data.institution}, {data.degree}
       </div>
       <button onClick={() => deleteEntry(data.id)}>delete</button>
       <button onClick={() => changeToEdit(data.id)}>edit</button>

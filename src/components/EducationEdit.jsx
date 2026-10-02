@@ -1,46 +1,35 @@
+import DatePicker from "./DatePicker";
+
 function EducationEdit({ data, handleUpdate, changeToDone }) {
   return (
     <form>
       <div className="field">
-        <label>
-          School name
+        <label htmlFor="institution">
+          Institution Name
+          </label>
           <input
+          id="institution"
+          name="institution"
             type="text"
-            value={data.schoolName}
-            onChange={(e) => handleUpdate(e, data.id, "schoolName")}
+            value={data.institution}
+            onChange={(e) => handleUpdate(e, data.id)}
           ></input>
-        </label>
+        
       </div>
       <div className="field">
-        <label>
-          Title of study
+        <label htmlFor="degree">
+          Degree
+          </label>
           <input
+          id="degree"
+          name="degree"
             type="text"
-            value={data.titleOfStudy}
-            onChange={(e) => handleUpdate(e, data.id, "titleOfStudy")}
+            value={data.degree}
+            onChange={(e) => handleUpdate(e, data.id)}
           ></input>
-        </label>
+        
       </div>
-      <div className="field">
-        <label>
-          From
-          <input
-            type="date"
-            value={data.from}
-            onChange={(e) => handleUpdate(e, data.id, "from")}
-          ></input>
-        </label>
-      </div>
-      <div className="field">
-        <label>
-          To
-          <input
-            type="date"
-            value={data.to}
-            onChange={(e) => handleUpdate(e, data.id, "to")}
-          ></input>
-        </label>
-      </div>
+      <DatePicker data={data} handleUpdate={handleUpdate} ></DatePicker>
       <button type="button" onClick={() => changeToDone(data.id)}>
         Done
       </button>
