@@ -1,0 +1,40 @@
+.date {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.selection {
+  display: flex;
+  gap: 5px;
+}
+
+.select-container {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+}
+
+select {
+  width: 100%;
+  padding: 8px 5px;
+  border: none;
+  background-color: #d1d2ff;
+  color: #01017a;
+  cursor: pointer;
+
+  appearance: none;
+}
+
+.select-container::after {
+  content: "▼";
+  font-size: 10px;
+  color: #01017a;
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+

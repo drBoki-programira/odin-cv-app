@@ -14,12 +14,12 @@ h2 {
   color: #01017a;
   background-color: #d1d2ff;
   border: none;
-  width: 300px;
+  width: 420px;
 }
 
 form button {
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 5px 10px;
   background-color: #01017a;
   border-radius: 10px;
