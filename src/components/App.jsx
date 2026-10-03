@@ -63,10 +63,11 @@ function App() {
     setWorkData((workData) => [...workData, { id: newId, edit: true }]);
   }
 
-  function updateWorkEntry(e, id, field) {
+  function updateWorkEntry(e, id) {
+    const { name, value } = e.target;
     setWorkData((workData) =>
       workData.map((entry) =>
-        entry.id === id ? { ...entry, [field]: e.target.value } : entry
+        entry.id === id ? { ...entry, [name]: value } : entry
       )
     );
   }

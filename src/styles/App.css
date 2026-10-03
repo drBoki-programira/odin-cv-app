@@ -18,15 +18,16 @@ main {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin: auto;
-  padding: 10px;
+  margin: 10px auto;
+  padding-top: 10px;
   width: 800px;
   color: #01017a;
+  border: 1px solid #01017a;
 }
 
 hr {
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: 10px;
+  margin-right: 10px;
   align-self: stretch;
   border-color: #01017a;
 }

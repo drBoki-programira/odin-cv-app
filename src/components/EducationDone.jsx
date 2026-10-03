@@ -14,14 +14,14 @@ function EducationDone({ data, changeToEdit, deleteEntry }) {
     "Dec",
   ];
   return (
-    <div className="edu-done">
-      <div className="edu-duration">
+    <div className="entry">
+      <div className="entry-duration">
         <p>
           {months[data.startMonth]} {data.startYear} - {months[data.endMonth]}{" "}
           {data.endYear}
         </p>
       </div>
-      <div className="edu-info">
+      <div className="entry-info">
         <h4>{data.degree}</h4>
 
         <p>

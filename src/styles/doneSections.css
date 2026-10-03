@@ -1,4 +1,4 @@
-.edu-done {
+.entry {
   width: 100%;
   padding: 10px 20px;
   display: flex;
@@ -6,11 +6,11 @@
   position: relative;
 }
 
-.edu-duration {
+.entry-duration {
   flex-basis: 30%;
 }
 
-.edu-info {
+.entry-info {
   flex-basis: 70%;
 }
 

@@ -1,46 +1,29 @@
+import DatePicker from "./DatePicker";
+
 function WorkEdit({ data, handleUpdate, changeToDone }) {
   return (
     <form>
       <div className="field">
-        <label>
-          Company name
-          <input
-            type="text"
-            value={data.company}
-            onChange={(e) => handleUpdate(e, data.id, "company")}
-          ></input>
-        </label>
+        <label htmlFor="employer">Employer</label>
+        <input
+          id="employer"
+          name="employer"
+          type="text"
+          value={data.company}
+          onChange={(e) => handleUpdate(e, data.id)}
+        ></input>
       </div>
       <div className="field">
-        <label>
-          Job position
-          <input
-            type="text"
-            value={data.position}
-            onChange={(e) => handleUpdate(e, data.id, "position")}
-          ></input>
-        </label>
+        <label htmlFor="position">Job position</label>
+        <input
+          id="position"
+          name="position"
+          type="text"
+          value={data.position}
+          onChange={(e) => handleUpdate(e, data.id)}
+        ></input>
       </div>
-      <div className="field">
-        <label>
-          From
-          <input
-            type="date"
-            value={data.from}
-            onChange={(e) => handleUpdate(e, data.id, "from")}
-          ></input>
-        </label>
-      </div>
-      <div className="field">
-        <label>
-          To
-          <input
-            type="date"
-            value={data.to}
-            onChange={(e) => handleUpdate(e, data.id, "to")}
-          ></input>
-        </label>
-      </div>
+      <DatePicker data={data} handleUpdate={handleUpdate}></DatePicker>
       <button type="button" onClick={() => changeToDone(data.id)}>
         Done
       </button>
