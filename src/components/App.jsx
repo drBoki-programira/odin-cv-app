@@ -1,5 +1,6 @@
 import "../styles/App.css";
 import "../styles/editSections.css";
+import "../styles/doneSections.css";
 import { useState } from "react";
 import InfoEdit from "./InfoEdit";
 import InfoDone from "./InfoDone";
@@ -118,11 +119,20 @@ function App() {
             ></EducationDone>
           )
         )}
-        <button onClick={addEducationEntry} style={{ display: "block" }}>
+        <button className="add-btn" onClick={addEducationEntry}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="20px"
+            viewBox="0 -960 960 960"
+            width="20px"
+            fill="#e2e2e2"
+          >
+            <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+          </svg>{" "}
           Add Education
         </button>
         <hr></hr>
-        <h2>Work Experience</h2>
+        <h2>Employment</h2>
         {workData.map((entry) =>
           entry.edit ? (
             <WorkEdit
@@ -140,8 +150,17 @@ function App() {
             ></WorkDone>
           )
         )}
-        <button onClick={addWorkEntry} style={{ display: "block" }}>
-          Add Work Experience
+        <button className="add-btn" onClick={addWorkEntry}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="20px"
+            viewBox="0 -960 960 960"
+            width="20px"
+            fill="#e2e2e2"
+          >
+            <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+          </svg>{" "}
+          Add Employment
         </button>
       </main>
     </>

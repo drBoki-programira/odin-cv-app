@@ -30,3 +30,15 @@ hr {
   align-self: stretch;
   border-color: #01017a;
 }
+
+.add-btn {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin: 10px auto;
+  padding: 5px 10px;
+  background-color: #01017a;
+  border-radius: 10px;
+  color: #e2e2e2;
+  font-size: 18px;
+}

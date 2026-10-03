@@ -13,12 +13,6 @@
   padding: 20px;
 }
 
-.edit {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
 .gen-info {
   display: flex;
   align-items: center;

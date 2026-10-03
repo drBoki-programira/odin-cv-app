@@ -1,3 +1,8 @@
+form {
+  border: 1px solid #01017a;
+  border-radius: 5px;
+}
+
 h2 {
   text-align: center;
 }
@@ -21,7 +26,7 @@ form button {
   display: block;
   margin: 10px auto;
   padding: 5px 10px;
-  background-color: #01017a;
+  background-color: #016601;
   border-radius: 10px;
   color: #e2e2e2;
 }

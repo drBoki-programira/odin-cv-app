@@ -1,0 +1,27 @@
+.edu-done {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+.edu-duration {
+  flex-basis: 30%;
+}
+
+.edu-info {
+  flex-basis: 70%;
+}
+
+.edit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.delete {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+}
