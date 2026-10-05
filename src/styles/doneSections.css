@@ -4,6 +4,8 @@
   display: flex;
   gap: 10px;
   position: relative;
+
+  animation: expand 0.3s ease-in forwards;
 }
 
 .entry-duration {
@@ -24,4 +26,15 @@
   position: absolute;
   top: 10px;
   right: 50px;
+}
+
+@keyframes expand {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }

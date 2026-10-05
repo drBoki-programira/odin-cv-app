@@ -1,3 +1,7 @@
+:root {
+  background-color: aliceblue;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +27,7 @@ main {
   width: 800px;
   color: #01017a;
   border: 1px solid #01017a;
+  background-color: white;
 }
 
 hr {

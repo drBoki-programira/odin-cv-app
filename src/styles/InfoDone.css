@@ -5,6 +5,8 @@
   width: 100%;
   position: relative;
   padding: 10px;
+
+  animation: expand 0.3s ease-in forwards;
 }
 
 .cv-header {

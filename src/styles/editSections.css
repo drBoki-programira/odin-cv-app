@@ -1,6 +1,8 @@
 form {
   border: 1px solid #01017a;
   border-radius: 5px;
+
+  animation: appear 0.2s ease-out forwards;
 }
 
 h2 {
@@ -29,4 +31,15 @@ form button {
   background-color: #016601;
   border-radius: 10px;
   color: #e2e2e2;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
